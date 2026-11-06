@@ -6,7 +6,7 @@ pipeline{
     }
      environment {
         SNAP_REPO ='vprofile-snapshot'
-        RELEASE_REPO ='vprofile-relase'
+        RELEASE_REPO ='vprofile-release'
         CENTRAL_REPO ='vprofile-central'
         NEXUS_GRP_REPO ='vpro-maven-group'
         NEXUSIP ='172.31.12.196'
