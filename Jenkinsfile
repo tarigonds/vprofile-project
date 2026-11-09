@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    tools{
+        maven 'MAVEN3'
+        jdk "JAVA25"
+    }
     stages{
        stage('BUILD'){
             steps {
