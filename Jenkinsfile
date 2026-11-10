@@ -24,5 +24,26 @@ pipeline{
                 
             }
         }
+        post{
+            success{
+                echo "Now Archiving"
+                    archiveArtifacts artifacts: '**/*.war'
+            }
+        }
+    }
+    stage('UNIT TEST'){
+        steps{
+            sh 'mvn test'
+        }
+    }
+    stage('INTEGRATION TEST'){
+        steps{
+            sh 'mvn verify -DskipUnitTests'
+        }
+    }
+    stage('Checkstyle Analysis'){
+        steps{
+            sh 'mvn checkstyle:checkstyle'
+        }
     }
 }
