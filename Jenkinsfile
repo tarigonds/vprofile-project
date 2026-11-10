@@ -5,15 +5,15 @@ pipeline{
         maven "MAVEN3"
     }
     environment{
-        SNAP_REPO ='vprofile-snapshot'
-        RELEASE_REPO ='vprofile-release'
-        CENTRAL_REPO ='vprofile-central'
-        NEXUS_GRP_REPO ='vpro-maven-group'
-        NEXUSIP ='172.31.1.57'
-        NEXUSPORT ='8081'
-        NEXUS_USER ='admin'
-        NEXUS_PASS ='Admin@123'
-        NEXUS_LOGIN ='nexuslogin'
+        SNAP_REPO = 'vprofile-snapshot'
+        RELEASE_REPO = 'vprofile-release'
+        CENTRAL_REPO = 'vprofile-central'
+        NEXUS_GRP_REPO = 'vpro-maven-group'
+        NEXUSIP = '172.31.1.57'
+        NEXUSPORT = '8081'
+        NEXUS_USER = 'admin'
+        NEXUS_PASS = 'Admin@123'
+        NEXUS_LOGIN = 'nexuslogin'
        
     }
     stages{
