@@ -33,7 +33,7 @@ pipeline{
                      sh 'mvn test'
                 }
             }
-            stgae('INTEGRATION TEST'){
+            stage('INTEGRATION TEST'){
                 steps{
                      sh 'mvn verify -DskipUnitTests'
                 }
