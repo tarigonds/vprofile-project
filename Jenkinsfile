@@ -14,6 +14,7 @@ pipeline{
         NEXUS_USER ='admin'
         NEXUS_PASS ='Admin@123'
         NEXUS_LOGIN ='nexuslogin'
+        MAVEN_GOALS = 'clean install'
     }
     stages{
         stage('Build'){
