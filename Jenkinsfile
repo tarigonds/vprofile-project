@@ -14,6 +14,8 @@ pipeline{
         NEXUS_USER = 'admin'
         NEXUS_PASS = 'Admin@123'
         NEXUS_LOGIN = 'nexuslogin'
+        SONARSERVER ='sonarserver'
+        SONARSCANNER ='sonarscanner'
     }
     stages{
         stage('Build'){
