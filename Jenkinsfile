@@ -1,8 +1,8 @@
 pipeline{
     agent any
     tools{
-        jdk "JAVA11"
-        maven "MAVEN3"
+        jdk 'JAVA11'
+        maven 'MEVEN3'
     }
     environment{
         SNAP_REPO = 'vprofile-snapshot'
@@ -21,29 +21,28 @@ pipeline{
             steps{
                 sh 'mvn clean package'
                 sh 'mvn -s settings.xml -DskipTests install'
-                
             }
-        }
-        post{
-            success{
-                echo "Now Archiving"
+            post {
+                success{
+                    echo "Now Archiving"
                     archiveArtifacts artifacts: '**/*.war'
+                }
             }
-        }
-    }
-    stage('UNIT TEST'){
-        steps{
-            sh 'mvn test'
-        }
-    }
-    stage('INTEGRATION TEST'){
-        steps{
-            sh 'mvn verify -DskipUnitTests'
-        }
-    }
-    stage('Checkstyle Analysis'){
-        steps{
-            sh 'mvn checkstyle:checkstyle'
+            stage('UNIT TEST'){
+                steps{
+                     sh 'mvn test'
+                }
+            }
+            stgae('INTEGRATION TEST'){
+                steps{
+                     sh 'mvn verify -DskipUnitTests'
+                }
+            }
+            stage('Checkstyle Analysis'){
+                steps{
+                    sh 'mvn checkstyle:checkstyle'
+                }
+            }
         }
     }
 }
